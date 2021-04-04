@@ -1,0 +1,75 @@
+body {
+  color: #000;
+  background-image: url("background3.jpg");
+  background-size: cover;
+}
+
+.header {
+  .logo {
+      width: 120px;
+      height: 82px;
+  }
+}
+
+.posts {
+  .post{
+      .image {
+        img {
+      width: 100%;
+        }
+      }
+        h1 {
+      color: #fff;
+      font-size: 1.2em;
+        }
+    .date {
+      font-size: 0.8em;
+      font-weight: bolder;
+      color: #5d6470;
+    }
+    .body {
+      font-size: 1em;
+      font-weight: bolder;
+      color: #0d1ed6;
+      span {
+        color: black;
+      }
+    }
+  }
+}
+
+h3 {
+  margin-bottom: 100px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 150px;
+}
+
+.container .flex img {
+  width: 70%;
+  height: 40%;
+}
+
+.container .flex h6 {
+  margin: 80px 30px 80px 30px;
+  font-weight: bolder;
+}
+
+h6 .doghome {
+  font-size: 80%;
+  font-weight: bolder;
+}
+
+.container img .img {
+  margin-bottom: 100px;
+}
+
+h2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 70px;
+  text-align: center;
+}

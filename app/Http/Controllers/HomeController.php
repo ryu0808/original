@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Animal;
 
 class HomeController extends Controller
 {
@@ -11,18 +12,22 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /**public function __construct()
     {
         $this->middleware('auth');
     }
+    */
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $posts = Animal::all()->sortByDesc('created_at');
+        
+        
+        return view('home', ['posts' => $posts]);
     }
 }

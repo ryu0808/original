@@ -53,13 +53,18 @@
                                     <td>{{ \Str::limit($animal->price, 30) }}</td>
                                     <td>{{ \Str::limit($animal->vaccine, 200) }}</td>
                                     <td>
+                                        @can('view', $animal)
                                         <div>
                                             <a class="btn btn-primary btn-sm" href="{{ action('Shop\AnimalController@edit', ['id' => $animal->id]) }}" role="button">編集</a>
                                         </div>
+                                        @endcan
                                         
+                                        @can('delete',$animal )
                                         <div>
                                             <a class="btn btn-danger btn-sm" href="{{ action('Shop\AnimalController@delete', ['id' => $animal->id]) }}" role="button">削除</a>
+                                            <p class="notice">注）ワンクリックで削除されます</p>
                                         </div>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

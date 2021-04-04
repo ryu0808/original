@@ -30,7 +30,7 @@ class AnimalPolicy
      */
     public function view(User $user, Animal $animal)
     {
-        //
+        return $user->id === $animal->user_id;
     }
 
     /**
@@ -53,7 +53,7 @@ class AnimalPolicy
      */
     public function update(User $user, Animal $animal)
     {
-        return $user->id === $animal->id;
+        //
     }
 
     /**
@@ -65,7 +65,7 @@ class AnimalPolicy
      */
     public function delete(User $user, Animal $animal)
     {
-        //
+        return $user->id === $animal->user_id;
     }
 
     /**

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 use App\Animal;
-use App\Policies\Animalpolicy;
+use App\Policies\AnimalPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
-        Animal::class => Animalpolicy::class,
+        Animal::class => AnimalPolicy::class,
     ];
 
     /**

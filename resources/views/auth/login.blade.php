@@ -25,21 +25,6 @@
                             </div>
                         </div>
                         
-                        <!-- ログイン画面に氏名の入力項目を追加したが、メールアドレスの入力項目を再使用することに決定したためコメントアウト
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">氏名 or 店名 or 保健所名</label>
-                            
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                        -->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">パスワード</label>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Shop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Animal;
+use Auth;
 
 class AnimalController extends Controller
 {
@@ -31,6 +32,7 @@ class AnimalController extends Controller
        unset($form['image']);
        
        $animal->fill($form);
+       $animal->user_id = Auth::id();
        $animal->save();
        
         return redirect('shop/animal/create');
@@ -52,6 +54,7 @@ class AnimalController extends Controller
     public function edit(Request $request)
     {
         $animal = Animal::find($request->id);
+        $this->authorize('view', $animal); //これを入れることで、つまづいていた認可の問題が解決した。
         if(empty($animal)) {
             abort(404);
         }
@@ -84,6 +87,7 @@ class AnimalController extends Controller
     public function delete(Request $request)
     {
         $animal = Animal::find($request->id);
+        $this->authorize('delete', $animal);
         $animal->delete();
         
         return redirect('shop/animal/');
@@ -92,7 +96,8 @@ class AnimalController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->only(['create', 'index', 'edit', 'updete', 'delete']);
-        $this->middleware('can:update,animal')->only(['edit', 'update']);
+        //$this->middleware('can:view,animal')->only(['edit', 'update']); この行を使うならRouting の設定が必要。
         $this->middleware('verified')->only('create');
     }
+    
 }
