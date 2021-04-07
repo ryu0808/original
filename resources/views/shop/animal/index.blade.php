@@ -5,6 +5,7 @@
     <div class="container">
         <div class="row">
             <h5>ワンちゃん一覧</h5>
+            <p class="ml-auto home"><a href="{{ action('HomeController@index') }}">トップページ</a></p>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -44,7 +45,11 @@
                         <tbody>
                             @foreach($posts as $animal)
                                 <tr>
-                                    <th>{{ $animal->image_path }}</th>
+                                    <th>
+                                        @if ($animal->image_path)
+                                            <img src="{{ asset('storage/image/' . $animal->image_path) }}">
+                                        @endif
+                                    </th>
                                     <td>{{ \Str::limit($animal->dogtype, 100) }}</td>
                                     <td>{{ \Str::limit($animal->color, 30) }}</td>
                                     <td>{{ \Str::limit($animal->gender, 30) }}</td>
@@ -53,6 +58,7 @@
                                     <td>{{ \Str::limit($animal->price, 30) }}</td>
                                     <td>{{ \Str::limit($animal->vaccine, 200) }}</td>
                                     <td>
+                                        
                                         @can('view', $animal)
                                         <div>
                                             <a class="btn btn-primary btn-sm" href="{{ action('Shop\AnimalController@edit', ['id' => $animal->id]) }}" role="button">編集</a>

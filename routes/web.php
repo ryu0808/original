@@ -27,3 +27,5 @@ Route::group(['prefix' =>'shop'],function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('shop/user/edit', 'Shop\UserController@edit')->middleware('auth');
+Route::post('shop/user/edit', 'Shop\UserController@update')->middleware('auth');

@@ -48,10 +48,19 @@ h5 {
   margin-bottom: 50px;
 }
 
+.row p.home{
+  text-align: right;
+}
+
 table {
   margin-top: 50px;
 }
 
 td .notice {
   font-size: 1px;
+}
+
+tbody img {
+  max-width: 100%;
+  height: auto;
 }

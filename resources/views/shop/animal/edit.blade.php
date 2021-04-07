@@ -4,8 +4,10 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <h5>ワンちゃん情報の編集</h5>
+            <p class="ml-auto home"><a href="{{ action('HomeController@index') }}">トップページ</a></p>
+            
             <div class="col-md-12 mx-auto">
-                <h5>ワンちゃん情報の編集</h5>
                 <form action="{{ action('Shop\AnimalController@update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
