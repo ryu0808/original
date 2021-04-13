@@ -30,7 +30,7 @@ body {
     .body {
       font-size: 1em;
       font-weight: bolder;
-      color: #0d1ed6;
+      color: #007fe8;
       span {
         color: black;
       }
@@ -72,4 +72,8 @@ h2 {
   margin-right: auto;
   margin-bottom: 70px;
   text-align: center;
+}
+
+.col-md-6 p.body {
+  width: 250%;
 }

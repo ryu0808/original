@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Animal::all()->sortByDesc('created_at');
+        $posts = Animal::all()->sortByDesc('created_at')->take(5);
         
         
         return view('home', ['posts' => $posts]);

@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+   
+    public function index(Request $request)
+    {
+        return view('shop.user.index', ["user_form" => Auth::user()]);
+    }
     
     public function edit(Request $request)
     {

@@ -22,6 +22,7 @@ Route::group(['prefix' =>'shop'],function() {
     Route::get('animal/edit', 'Shop\AnimalController@edit')->middleware('auth'); 
     Route::post('animal/edit', 'Shop\AnimalController@update')->middleware('auth');
     Route::get('animal/delete', 'Shop\AnimalController@delete')->middleware('auth');
+    
 });
 
 Auth::routes();
@@ -29,3 +30,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('shop/user/edit', 'Shop\UserController@edit')->middleware('auth');
 Route::post('shop/user/edit', 'Shop\UserController@update')->middleware('auth');
+Route::get('shop/user/index', 'Shop\UserController@index')->middleware('auth');

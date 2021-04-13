@@ -65,3 +65,7 @@ tbody img {
   height: auto;
 }
 
+.row .ml-auto a.edit {
+  margin-top: 50px;
+}
+
