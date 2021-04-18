@@ -16,4 +16,9 @@ class Animal extends Model
         'birthday' => 'required',
         'price' => 'required',
         );
+        
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

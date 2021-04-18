@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h5>プロフィール情報</h5>
+            <h3>プロフィール情報</h3>
             <p class="ml-auto home"><a href="{{ action('HomeController@index') }}">トップページ</a></p>
         </div>
             

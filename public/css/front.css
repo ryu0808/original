@@ -1,7 +1,10 @@
+@charset "UTF-8";
+
 body {
   color: #000;
   background-image: url(/images/background3.jpg?4f53bf5e9686ca37c9fc9a878e09e635);
   background-size: cover;
+  font-family: "Hiragino Maru Gothic ProN", "\30D2\30E9\30AE\30CE\4E38\30B4   ProN W4", "arial unicode ms";
 }
 
 .header .logo {
@@ -27,7 +30,7 @@ body {
 .posts .post .body {
   font-size: 1em;
   font-weight: bolder;
-  color: #007fe8;
+  color: #ff7700;
 }
 
 .posts .post .body span {

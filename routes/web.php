@@ -22,6 +22,7 @@ Route::group(['prefix' =>'shop'],function() {
     Route::get('animal/edit', 'Shop\AnimalController@edit')->middleware('auth'); 
     Route::post('animal/edit', 'Shop\AnimalController@update')->middleware('auth');
     Route::get('animal/delete', 'Shop\AnimalController@delete')->middleware('auth');
+    Route::get('animal/show', 'Shop\AnimalController@show');
     
 });
 

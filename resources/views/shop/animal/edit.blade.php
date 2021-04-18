@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h5>ワンちゃん情報の編集</h5>
+            <h3>ワンちゃん情報の編集</h3>
             <p class="ml-auto home"><a href="{{ action('HomeController@index') }}">トップページ</a></p>
             
             <div class="col-md-12 mx-auto">

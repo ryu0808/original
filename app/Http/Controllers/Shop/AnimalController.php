@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Animal;
 use Auth;
+use App\User;
 
 class AnimalController extends Controller
 {
@@ -95,9 +96,15 @@ class AnimalController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth')->only(['create', 'index', 'edit', 'updete', 'delete']);
+        $this->middleware('auth')->only(['create', 'edit', 'updete', 'delete']);
         //$this->middleware('can:view,animal')->only(['edit', 'update']); この行を使うならRouting の設定が必要。
         $this->middleware('verified')->only('create');
     }
     
+    public function show(Request $request)
+    {
+        $animal = Animal::find($request->id);
+        
+        return view('shop.animal.show', ['animal_form' => $animal, 'user_form' => $animal->user]);
+    }
 }

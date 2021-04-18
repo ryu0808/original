@@ -1,8 +1,10 @@
+@charset "UTF-8";
+
 body {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #fff;
   color: #000;
+  background-image: url(/images/background3.jpg?4f53bf5e9686ca37c9fc9a878e09e635);
+  background-size: cover;
+  font-family: "Hiragino Maru Gothic ProN", "\30D2\30E9\30AE\30CE\4E38\30B4   ProN W4", "arial unicode ms";
 }
 
 .navbar-laravel {
@@ -43,13 +45,14 @@ body {
   text-align: right;
 }
 
-h5 {
+h3 {
   color: #000;
   margin-bottom: 50px;
 }
 
-.row p.home {
+.row p.home a {
   text-align: right;
+  color: blue;
 }
 
 table {
@@ -66,6 +69,50 @@ tbody img {
 }
 
 .row .ml-auto a.edit {
+  margin-top: 50px;
+}
+
+.image2 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.date {
+  margin-bottom: 30px;
+  color: #5d6470;
+}
+
+p.body {
+  font-size: 125%;
+  font-weight: bold;
+  color: #007fe8;
+}
+
+p span {
+  color: black;
+}
+
+.user {
+  margin: 100px auto 0 auto;
+}
+
+.user p.body {
+  color: #007fe8;
+}
+
+.user span {
+  color: black;
+}
+
+h2 {
+  margin-bottom: 50px;
+}
+
+.form-group div.col-md-10 {
+  margin-top: 50px;
+}
+
+form input.btn {
   margin-top: 50px;
 }
 

@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h5>ワンちゃんの登録</h5>
+            <h3>ワンちゃんの登録</h3>
             <p class="ml-auto home"><a href="{{ action('HomeController@index') }}">トップページ</a></p>
             
             <div class="col-md-12 mx-auto">
@@ -76,7 +76,7 @@
                     </div>
                     
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="登録">
+                    <input type="submit" class="btn btn-primary offset-md-3" value="登録">
                 </form>
             </div>
         </div>

@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h5>ワンちゃん一覧</h5>
+            <h3>ワンちゃん一覧</h3>
             <p class="ml-auto home"><a href="{{ action('HomeController@index') }}">トップページ</a></p>
         </div>
         <div class="row">
@@ -47,7 +47,7 @@
                                 <tr>
                                     <th>
                                         @if ($animal->image_path)
-                                            <img src="{{ asset('storage/image/' . $animal->image_path) }}">
+                                            <a href="{{ action('Shop\AnimalController@show', ['id' => $animal->id]) }}"><img src="{{ asset('storage/image/' . $animal->image_path) }}"></a>
                                         @endif
                                     </th>
                                     <td>{{ \Str::limit($animal->dogtype, 100) }}</td>

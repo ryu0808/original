@@ -8,13 +8,13 @@
     </div>
     <div class="flex">
         <h6>ワンちゃん情報を登録・編集する<br><br>
-            <a href="{{ action('Shop\AnimalController@add') }}" class="doghome">新しくワンちゃんを登録する</a><br>
+            <a href="{{ action('Shop\AnimalController@add') }}" class="doghome">新しくワンちゃんを登録する</a><br><br>
             <a href="{{ action('Shop\AnimalController@index') }}" class="doghome">ワンちゃん情報を編集する</a><br><br><br>
             プロフィール情報<br><br>
             <a href="{{ action('Shop\UserController@index') }}" class="doghome">自分のプロフィール情報を確認する</a><br>
         </h6>
         <img src="{{ asset('image/puppies.jpg') }}" alt="ホームページ画像" class="rounded-circle">
-        <h6>ワンちゃんを探す<br><br><br>
+        <h6>ワンちゃんを探す<br><br>
             <a href="{{ action('Shop\AnimalController@index') }}" class="doghome">ワンちゃんのいる都道府県で検索する</a>
         </h6>
     </div>
@@ -30,7 +30,7 @@
                         <div class="col-md-6">
                             <div class="image">
                                 @if ($post->image_path)
-                                    <img src="{{ asset('storage/image/' . $post->image_path) }}">
+                                    <a href="{{ action('Shop\AnimalController@show', ['id' => $post->id]) }}"><img src="{{ asset('storage/image/' . $post->image_path) }}"></a>
                                 @endif
                             </div>
                         </div>

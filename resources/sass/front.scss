@@ -2,6 +2,7 @@ body {
   color: #000;
   background-image: url("background3.jpg");
   background-size: cover;
+  font-family: 'Hiragino Maru Gothic ProN', 'ヒラギノ丸ゴ ProN W4', 'arial unicode ms';
 }
 
 .header {
@@ -30,7 +31,7 @@ body {
     .body {
       font-size: 1em;
       font-weight: bolder;
-      color: #007fe8;
+      color: #ff7700;
       span {
         color: black;
       }
