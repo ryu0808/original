@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
 
 Route::group(['prefix' =>'shop'],function() {
     Route::get('animal/create', 'Shop\AnimalController@add')->middleware('auth');
