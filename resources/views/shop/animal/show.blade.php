@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-7 image2">
                 @if ($animal_form->image_path)
-                    <img src="{{ asset('storage/image/' . $animal_form->image_path) }}">
+                    <img src="{{ $animal_form->image_path }}">
                 @endif
             </div>
             
