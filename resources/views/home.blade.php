@@ -30,7 +30,7 @@
                         <div class="col-md-6">
                             <div class="image">
                                 @if ($post->image_path)
-                                    <a href="{{ action('Shop\AnimalController@show', ['id' => $post->id]) }}"><img src="{{ asset('storage/image/' . $post->image_path) }}"></a>
+                                    <a href="{{ action('Shop\AnimalController@show', ['id' => $post->id]) }}"><img src="{{ $post->image_path }}"></a>
                                 @endif
                             </div>
                         </div>
