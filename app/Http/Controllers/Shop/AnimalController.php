@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Animal;
 use Auth;
 use App\User;
+use Storage;
 
 class AnimalController extends Controller
 {
@@ -23,8 +24,8 @@ class AnimalController extends Controller
        $form = $request->all();
        
        if(isset($form['image'])) {
-           $path = $request->file('image')->store('public/image');
-           $animal->image_path = basename($path);
+           $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+           $animal->image_path = Storage::disk('s3')->url($path);
        } else {
            $animal->image_path = null;
        }
@@ -70,7 +71,7 @@ class AnimalController extends Controller
         if($request->remove == 'true'){
             $animal_form['image_path'] = null;
         } elseif($request->file('image')) {
-            $path = $request->file('image')->store('public/image');
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
             $animal_form['image_path'] = basename($path);
         } else {
             $animal_form['image_path'] = $animal->image_path;
